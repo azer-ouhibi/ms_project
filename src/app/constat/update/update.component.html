@@ -1,24 +1,64 @@
-<form #modelF="ngForm">
-    <label>Id Facture </label>
-    <input type="number" class="form-control" name="idConstat" [(ngModel)]="constat.idConstat" #idConstat="ngModel" disabled>
-    
-    <label>description</label>
-    <input type="text" class="form-control" [(ngModel)]="constat.description" #description="ngModel" name="description"  >
-    
-    <label>immatricule</label>
-    <input type="text" class="form-control" name="immatricule" [(ngModel)]="constat.immatricule" #immatricule="ngModel">
-    
-    <label>Date Constat</label>
-    <input type="date" class="form-control" name="date_Constat" [(ngModel)]="constat.date_Constat" #date_Constat="ngModel">
-    
+<div class="container mt-5">
+    <div class="row" *ngIf="isLoading == true">
+        <div class="col-12 text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            <p>chargement...</p>
+        </div>
+    </div>
     
 
-    <label>Blessure</label>
-    <select  class="form-select" aria-label="Default select example" name="blessure" [(ngModel)]="constat.blessure" #blessure="ngModel">
-        <option value="">--Please choose an option--</option>
-        <option value=true>true</option>
-        <option value=false>false</option>
-     </select>
-     <br>
-    <input type="submit" class="btn btn-primary" value="Update" (click)="UpdateConstat(modelF.value)"> 
-</form>
+    <div class="row" *ngIf="isLoading == false" id="contentToConvert">
+       
+        <div class="col-md-4  ">
+           
+             <img src="https://reassurez-moi.fr/guide/wp-content/uploads/2018/12/constat-amiable.jpg" class="w-100" alt="">
+             <div class="row">
+            </div>
+
+            </div>
+        <div class="col-md-8  ">
+          <h1>Constat numero :{{constat.idConstat}} </h1>
+          <form #modelF="ngForm">
+            <label>Id Facture </label>
+            <input type="number" class="form-control" name="idConstat" [(ngModel)]="constat.idConstat" #idConstat="ngModel" disabled>
+            
+            <label>description</label>
+            <input type="text" class="form-control" [(ngModel)]="constat.description" #description="ngModel" name="description"  >
+            
+            <label>immatricule</label>
+            <input type="text" class="form-control" name="immatricule" [(ngModel)]="constat.immatricule" #immatricule="ngModel">
+            
+            <label>Date Constat</label>
+            <input type="date" class="form-control" name="date_Constat" [(ngModel)]="constat.date_Constat" #date_Constat="ngModel">
+            
+            
+        
+            <label>Blessure</label>
+            <select  class="form-select" aria-label="Default select example" name="blessure" [(ngModel)]="constat.blessure" #blessure="ngModel">
+                <option value="">--Please choose an option--</option>
+                <option value=true>true</option>
+                <option value=false>false</option>
+             </select>
+             <br>
+             <div class="row">
+                <input type="submit" class="btn btn-primary" value="Update" (click)="UpdateConstat(modelF.value)"> 
+
+             </div>
+        </form>
+        
+        
+            
+        </div>
+
+
+        
+        
+
+    </div>
+
+    
+
+    
+</div>

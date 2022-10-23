@@ -13,6 +13,7 @@ export class UpdateComponent implements OnInit {
   constructor(private ac:ActivatedRoute,private service:ConstatService,private router:Router) { }
 
 
+  isLoading = true;
 
   constat = new Constat();
   id=this.ac.snapshot.params['id'];
@@ -29,7 +30,7 @@ export class UpdateComponent implements OnInit {
       {
         this.constat=res;
         this.constat.idConstat=res.id;
-     
+        this.isLoading = false;
       },
       (error)=>{
         console.log(error)
