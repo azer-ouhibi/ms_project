@@ -1,0 +1,32 @@
+
+#Server configuration
+server.servlet.context-path=/SpringMVC
+spring.mvc.servlet.path=/servlet
+server.port=8088
+
+#H2
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2
+#Datasource
+spring.datasource.url=jdbc:h2:file:~/azer
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=create
+
+
+
+spring.cloud.config.enabled=false
+
+
+spring.application.name=Reclamation
+#Eeureka server url
+eureka.client.serviceUrl.defaultZone:http://localhost:8761/eureka
+
+eureka.client.fetchRegristry=true
+eureka.instance.prefer-ip-address=true
+#.........................................
+eureka.instance.leaseRenewalIntervalInSeconds= 10
+eureka.metadataMap.instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}:${random.value}}
+instance.preferIpAddress= true

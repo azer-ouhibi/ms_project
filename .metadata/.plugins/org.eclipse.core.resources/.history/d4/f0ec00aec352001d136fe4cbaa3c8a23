@@ -1,0 +1,15 @@
+#service name
+spring.application.name=zuul_application
+server.port=8063
+#Eeureka server url
+eureka.client.server-url.default-zone=${http://localhost:8761/eureka-server}
+eureka.client.serviceUrl.defaultZone: http://192.168.1.52:8761/eureka/
+eureka.client.register-with-eureka=true
+#eureka.client.server-url.default-zone=${http://discovery:8761/eureka-server}
+zuul.host.socket-timeout-millis: 30000
+
+
+#.........................................
+eureka.instance.leaseRenewalIntervalInSeconds= 10
+eureka.metadataMap.instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}:${random.value}}
+instance.preferIpAddress= true

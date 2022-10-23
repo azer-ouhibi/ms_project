@@ -1,0 +1,44 @@
+version: "2.2"
+services:
+  dossier_B:
+    build: C:\Users\user\Desktop\work\constatMicroService
+    ports:
+      - "8084:8084"
+    image: "dossier"
+    depends_on:
+      - eureka_C
+  eureka_C:
+    build: C:\Users\user\Desktop\work\EurekaServer
+    ports:
+      - "8761:8761"
+    image: "eurekaserver"
+  constat_C:
+    build: C:\Users\user\Desktop\work\constatMicroService
+    ports:
+      - "8089:8089"
+    image: "constatmicroservice"
+    depends_on:
+      - eureka_C
+  rapport_C:
+    build: C:\Users\user\Desktop\work\RaapportMS
+    ports:
+      - "8083:8083"
+    image: "rapportms"
+    depends_on:
+      - eureka_C
+  devis_A:
+    build: C:\Users\user\Desktop\work\facture
+    ports:
+      - "8087:8087"
+    image: "deviss"
+  rendezvous_H:
+    build: C:\Users\user\Desktop\work\rendezVousMicroService
+    ports:
+      - "8081:8081"
+    image: "rendezvousmicroservice"
+  reclamation_T:
+    build: C:\Users\user\Desktop\work\reclamation
+    ports:
+      - "8082:8082"
+    image: "demoreclamation"    
+
