@@ -1,0 +1,69 @@
+<div class="container mt-5">
+    <div class="row" *ngIf="isLoading == true">
+        <div class="col-12 text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>chargement...</p>
+        </div>
+    </div>
+
+
+
+    <div class="row" *ngIf="isLoading == false">
+
+
+        <div class="col-md-4  ">
+
+            <img src="https://www.lenouveleconomiste.fr/wp-content/uploads/2019/01/timing.jpg" class="w-100"
+                alt="">
+            <div class="row">
+                <button class="btn btn-primary" style="margin-right: 15px;"
+                    [routerLink]="'/rendezVous/RendezVousHome/getParent/'"> Back To Menu</button>
+            </div>
+
+        </div>
+        <div class="col-md-8  ">
+            <h1>rendezVous numero :{{rendezVous.id}} </h1>
+            <table class="table">
+                <thead>
+                    <tr>
+
+
+                        <th scope="col">dateRendezVous</th>
+                        <th scope="col">description </th>
+                        <th scope="col">etatRendezVous</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{rendezVous.dateRendezVous }}</td>
+                        <td>{{rendezVous.description }}</td>
+                        <td>{{rendezVous.etatRendezVous}}</td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <div>
+                <button class="btn btn-success" style="margin-right: 15px;" (click)="SavePDF()">Download (PDF)</button>
+                <button class="btn btn-danger" style="margin-right: 15px;" (click)="Delete(rendezVous.id)">
+                    Delete</button>
+                <button class="btn btn-primary" style="margin-right: 15px;" (click)="Update(rendezVous.id)">
+                    Update</button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+</div>

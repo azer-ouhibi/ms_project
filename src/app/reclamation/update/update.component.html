@@ -1,1 +1,56 @@
-<p>update works!</p>
+<div class="container mt-5">
+    <div class="row" *ngIf="isLoading == true">
+        <div class="col-12 text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            <p>chargement...</p>
+        </div>
+    </div>
+    
+
+    <div class="row" *ngIf="isLoading == false" id="contentToConvert">
+       
+        <div class="col-md-4  ">
+           
+             <div class="row">
+            </div>
+
+            </div>
+        <div class="col-md-8  ">
+          <h1>Reclamation numero :{{reclamation.id}} </h1>
+          <form #modelF="ngForm">
+            <label>Id Reclamation </label>
+            <input type="number" class="form-control" name="id" [(ngModel)]="reclamation.id" #id="ngModel" disabled>
+            
+            <label>description</label>
+            <input type="text" class="form-control" [(ngModel)]="reclamation.description" #description="ngModel" name="description"  >
+            
+            
+            <label>Date Reclamation</label>
+            <input type="date" class="form-control" name="date" [(ngModel)]="reclamation.date" #date="ngModel">
+            
+            
+        
+            
+             <br>
+             <div class="row">
+                <input type="submit" class="btn btn-primary" value="Update" (click)="UpdateReclamation(modelF.value)"> 
+
+             </div>
+        </form>
+        
+        
+            
+        </div>
+
+
+        
+        
+
+    </div>
+
+    
+
+    
+</div>

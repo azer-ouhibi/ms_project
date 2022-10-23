@@ -1,1 +1,16 @@
-<p>get-child works!</p>
+<div class="card film-item" [routerLink]="'/reclamation/ReclamationHome/detail/'+reclamation.id">
+    <img [src]="photoURL" class="w-100" alt="">
+
+    <div class="film-title">
+        <p style="text-align: center;">
+
+            <strong>idReclamation :</strong> {{reclamation.id}}<br>
+                <strong> Title :</strong> {{reclamation.title}}<br>
+                        <strong>description :</strong> {{reclamation.description}}<br>
+                            <strong>Date :</strong> {{reclamation.date }}<br>
+                               
+        </p>
+
+    </div>
+
+</div>

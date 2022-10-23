@@ -1,1 +1,25 @@
-<p>add works!</p>
+
+<form [formGroup]="ReclamationForm"(ngSubmit)="SaveReclamation(ReclamationForm.value)" >
+    <div class="mb-3">
+     
+      <label for="" class="form-label">Title</label>
+      <input formControlName="title" type="text" class="form-control" id="title">
+      
+      <label for="" class="form-label">description</label>
+      <input formControlName="description" type="text" class="form-control" id="description">
+      
+      <label for="" class="form-label">Date</label>
+      <input formControlName="date" type="date" class="form-control" id="date">
+      
+      
+
+<!--       
+      <label for="" class="form-label">dateFacture</label>
+      <input formControlName="dateFacture" type="date" class="form-control" id="dateFacture"> -->
+     
+
+
+     </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

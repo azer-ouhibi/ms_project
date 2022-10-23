@@ -1,1 +1,69 @@
-<p>update works!</p>
+<div class="container mt-5">
+    <div class="row" *ngIf="isLoading == true">
+        <div class="col-12 text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>chargement...</p>
+        </div>
+    </div>
+
+
+    <div class="row" *ngIf="isLoading == false" id="contentToConvert">
+
+        <div class="col-md-4  ">
+
+            <img src="https://www.lenouveleconomiste.fr/wp-content/uploads/2019/01/timing.jpg" class="w-100"
+                alt="">
+            <div class="row">
+            </div>
+
+        </div>
+        <div class="col-md-8  ">
+            <h1>rendezVous numero :{{rendezVous.idRendezVous}} </h1>
+            <form #modelF="ngForm">
+                <label>Id rendezVous </label>
+                <input type="number" class="form-control" name="idRendezVous" [(ngModel)]="rendezVous.idRendezVous"
+                    #idRendezVous="ngModel" disabled>
+
+                <label>description</label>
+                <input type="text" class="form-control" [(ngModel)]="rendezVous.description" #description="ngModel"
+                    name="description">
+
+                <label>Date rendezVous</label>
+                <input type="date" class="form-control" name="dateRendezVous" [(ngModel)]="rendezVous.dateRendezVous"
+                    #date_rendezVous="ngModel" value="rendezVous.dateRendezVous">
+
+
+
+                <label>Etat RendezVous</label>
+                <select class="form-select" aria-label="Default select example" name="etatRendezVous"
+                    [(ngModel)]="rendezVous.etatRendezVous" #etatRendezVous="ngModel">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Annulée">Annulée</option>
+                    <option value="Términé">Términé</option>
+                    <option value="Reporté">Reporté</option>
+
+                </select>
+                <br>
+                <div class="row">
+                    <input type="submit" class="btn btn-primary" value="Update"
+                        (click)="UpdaterendezVous(modelF.value)">
+
+                </div>
+            </form>
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+</div>

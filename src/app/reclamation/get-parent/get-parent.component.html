@@ -1,1 +1,5 @@
-<p>get-parent works!</p>
+<div class="row movies mt-5">
+    <div class="col-md-3 col-sm-6" *ngFor="let li of ListReclamation let i=index;">
+        <app-get-child [reclamation]="li" photoURL="https://defi-social.com/wp-content/uploads/2020/10/ReclamationFormation.jpg" (notif)="executes($event)"></app-get-child>
+    </div> 
+  </div>

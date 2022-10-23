@@ -1,0 +1,15 @@
+<div class="card film-item" [routerLink]="'/rendezVous/RendezVousHome/detail/'+rendezVous.id">
+    <img [src]="photoURL" class="w-100" alt="">
+    <div class="film-title">
+
+        <p style="text-align: center;">
+
+            <strong>idrendezVous :</strong> {{rendezVous.id}}<br>
+            <strong>description :</strong> {{rendezVous.description}}<br>
+            <strong>date_rendezVous :</strong> {{rendezVous.dateRendezVous }}<br>
+            <strong> etatRendezVous :</strong> {{rendezVous.etatRendezVous}}
+        </p>
+
+    </div>
+
+</div>
