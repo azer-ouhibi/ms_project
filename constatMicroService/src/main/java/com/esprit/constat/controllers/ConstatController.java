@@ -3,6 +3,7 @@ package com.esprit.constat.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,12 +33,15 @@ public class ConstatController {
 	
 	@GetMapping("/liste-constat")
 	@ResponseBody
-	List<Constat> listedeBoutiques(){
+	@CrossOrigin("*")
+	List<Constat> listeConstat(){
 		return constatService.retrieveAllConstats();
 	}
 	
 	@GetMapping("/One-constat/{constat-id}")
 	@ResponseBody
+	@CrossOrigin("*")
+
 	Constat retrieveConstat(@PathVariable("constat-id") Long constatId) {
 		return constatService.retrieveConstat(constatId);
 	}
@@ -46,7 +50,12 @@ public class ConstatController {
 
 	@PutMapping("/modify-constat")
 	@ResponseBody
+	@CrossOrigin("*")
 	public Constat modifyClient(@RequestBody Constat constat) {
+		System.out.println("*****************************************************");
+
+		System.out.println(constat);
+		System.out.println("*****************************************************");
 
 	return constatService.updateConstat(constat);
 
@@ -56,6 +65,8 @@ public class ConstatController {
 
 	@DeleteMapping("/remove-constat/{constat-id}")
 	@ResponseBody
+	@CrossOrigin("*")
+
 	public void removeConstat(@PathVariable("constat-id") Long constatId) {
 		
 		constatService.deleteConstat(constatId);
@@ -63,6 +74,8 @@ public class ConstatController {
 	}
 	@DeleteMapping("/remove-All")
 	@ResponseBody
+	@CrossOrigin("*")
+
 	public void removeAll() {
 		
 		constatService.deleteAll();
