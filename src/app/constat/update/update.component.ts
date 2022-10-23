@@ -41,8 +41,10 @@ export class UpdateComponent implements OnInit {
   UpdateConstat(data:Constat){
     
     data.idConstat=this.id;
+    data.id=this.id;
+
     this.service.UpdatConstat(data).subscribe(()=>{},(error)=>{console.log(error);})
-    this.router.navigateByUrl("Constat/ConstatHome/detail/"+this.id);
+    this.router.navigateByUrl("constat/ConstatHome/detail/"+this.id);
     
   }
   

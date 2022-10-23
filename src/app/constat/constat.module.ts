@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetDetailsComponent } from './get-details/get-details.component';
 import { GetParentComponent } from './get-parent/get-parent.component';
 import { GetChildComponent } from './get-child/get-child.component';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
 
 
 @NgModule({

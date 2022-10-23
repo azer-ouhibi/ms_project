@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from '../not-found/not-found.component';
 import { AddComponent } from './add/add.component';
 import { ConstatComponent } from './constat.component';
 import { GetDetailsComponent } from './get-details/get-details.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
               {path:"getParent", component:GetParentComponent},
               {path:"detail/:id", component:GetDetailsComponent}
               ]
-  }
+  },
+  {path:'**',component:NotFoundComponent}
 
 ];
 

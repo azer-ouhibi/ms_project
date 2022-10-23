@@ -21,14 +21,19 @@
         <div class="col-md-8  ">
           <h1>Constat numero :{{constat.idConstat}} </h1>
           <form #modelF="ngForm">
-            <label>Id Facture </label>
+            <label>Id Constat </label>
             <input type="number" class="form-control" name="idConstat" [(ngModel)]="constat.idConstat" #idConstat="ngModel" disabled>
             
             <label>description</label>
             <input type="text" class="form-control" [(ngModel)]="constat.description" #description="ngModel" name="description"  >
+            <label>lieux</label>
+            <input type="text" class="form-control" [(ngModel)]="constat.lieux" #lieux="ngModel" name="lieux"  >
             
             <label>immatricule</label>
             <input type="text" class="form-control" name="immatricule" [(ngModel)]="constat.immatricule" #immatricule="ngModel">
+            
+            <label>Taux Dégats</label>
+            <input type="text" class="form-control" name="tauxDegats" [(ngModel)]="constat.tauxDegats" #tauxDegats="ngModel">
             
             <label>Date Constat</label>
             <input type="date" class="form-control" name="date_Constat" [(ngModel)]="constat.date_Constat" #date_Constat="ngModel">

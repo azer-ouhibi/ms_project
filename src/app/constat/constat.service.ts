@@ -39,7 +39,9 @@ deleteConstat(id:any){
 }
 UpdatConstat(data:Constat):Observable<Constat>
 {
-  return this.http.put<Constat>(this.baseurl+"modify-constat/"+data.id,data);
+  console.log(data)
+
+  return this.http.put<Constat>(this.baseurl+"modify-constat/",data);
 
 }
 

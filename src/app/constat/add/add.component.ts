@@ -47,7 +47,7 @@ export class AddComponent implements OnInit {
   
      
       this.service.addConstat(data).subscribe(()=>{},(error)=>{console.log(error);})
-      this.router.navigateByUrl("Constat/ConstatHome/getParent");
+      this.router.navigateByUrl("constat/ConstatHome/getParent");
    
     }
   

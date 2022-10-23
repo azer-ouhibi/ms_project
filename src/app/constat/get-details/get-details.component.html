@@ -8,9 +8,11 @@
         </div>
     </div>
     
+    
 
-    <div class="row" *ngIf="isLoading == false" id="contentToConvert">
+    <div class="row" *ngIf="isLoading == false" >
        
+
         <div class="col-md-4  ">
            
              <img src="https://reassurez-moi.fr/guide/wp-content/uploads/2018/12/constat-amiable.jpg" class="w-100" alt="">
@@ -35,7 +37,7 @@
                     </thead>
                     <tbody>
                       <tr >
-                        <td >{{constat.tauxDegats}}</td>
+                        <td >{{constat.tauxDegats}} %</td>
                         <td>{{constat.immatricule}}</td>
                         <td>{{constat.lieux }}</td>
                         <td>{{constat.date_Constat }}</td>
@@ -46,7 +48,7 @@
                       </tr>
                 </tbody>
               </table>
-            
+
 
             <div>
               <button class="btn btn-success" style="margin-right: 15px;" (click)="SavePDF()" >Download (PDF)</button> 
