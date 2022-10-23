@@ -6,6 +6,9 @@ import { DevisComponent } from './devis.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { ShowComponent } from './show/show.component';
+import { GetParentComponent } from './get-parent/get-parent.component';
+import { GetChildComponent } from './get-child/get-child.component';
+import { GetDetailsComponent } from './get-details/get-details.component';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { ShowComponent } from './show/show.component';
     DevisComponent,
     AddComponent,
     UpdateComponent,
-    ShowComponent
+    ShowComponent,
+    GetParentComponent,
+    GetChildComponent,
+    GetDetailsComponent
   ],
   imports: [
     CommonModule,
