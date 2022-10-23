@@ -32,7 +32,7 @@ export class RapportService {
   
   
   deleteRapport(id:any){
-    console.log(id);
+  
     return this.http.delete(this.baseurl+"Rapport/"+id);
   
   }

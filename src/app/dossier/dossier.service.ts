@@ -32,7 +32,7 @@ export class DossierService {
   
   
   deleteDossier(id:any){
-    console.log(id);
+  
     return this.http.delete(this.baseurl+"Dossier/"+id);
   
   }

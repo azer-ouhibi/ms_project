@@ -1,1 +1,27 @@
-<p>add works!</p>
+
+<form [formGroup]="ConstatForm"(ngSubmit)="SaveConstat(ConstatForm.value)" >
+    <div class="mb-3">
+     
+      <label for="" class="form-label">tauxDegats</label>
+      <input formControlName="tauxDegats" type="number" class="form-control" id="tauxDegats">
+      
+      <label for="" class="form-label">immatricule</label>
+      <input formControlName="immatricule" type="text" class="form-control" id="immatricule">
+      
+      <label for="" class="form-label">lieux</label>
+      <input formControlName="lieux" type="text" class="form-control" id="lieux">
+      
+      <label for="" class="form-label">description</label>
+      <input formControlName="description" type="text" class="form-control" id="description">
+      
+
+<!--       
+      <label for="" class="form-label">dateFacture</label>
+      <input formControlName="dateFacture" type="date" class="form-control" id="dateFacture"> -->
+     
+
+
+     </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

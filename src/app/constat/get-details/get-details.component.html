@@ -1,0 +1,68 @@
+<div class="container mt-5">
+    <div class="row" *ngIf="isLoading == true">
+        <div class="col-12 text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            <p>chargement...</p>
+        </div>
+    </div>
+    
+
+    <div class="row" *ngIf="isLoading == false" id="contentToConvert">
+       
+        <div class="col-md-4  ">
+           
+             <img src="https://reassurez-moi.fr/guide/wp-content/uploads/2018/12/constat-amiable.jpg" class="w-100" alt="">
+             <div class="row">
+                <button class="btn btn-primary" style="margin-right: 15px;"  [routerLink]="'/constat/ConstatHome/getParent/'"> Back To Menu</button>
+            </div>
+
+            </div>
+        <div class="col-md-8  ">
+          <h1>Constat numero :{{constat.idConstat}} </h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        
+                        <th scope="col">tauxDegats</th>
+                        <th scope="col">immatricule</th>
+                        <th scope="col">lieux</th>
+                        <th scope="col">date_Constat</th>
+                        <th scope="col">description </th>
+                        <th scope="col">blessure</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr >
+                        <td >{{constat.tauxDegats}}</td>
+                        <td>{{constat.immatricule}}</td>
+                        <td>{{constat.lieux }}</td>
+                        <td>{{constat.date_Constat }}</td>
+                        <td>{{constat.description }}</td>
+                        <td>{{constat.blessure}}</td>
+                      
+                        
+                      </tr>
+                </tbody>
+              </table>
+            
+
+            <div>
+              <button class="btn btn-success" style="margin-right: 15px;" (click)="SavePDF()" >Download (PDF)</button> 
+              <button class="btn btn-danger" style="margin-right: 15px;" (click)="Delete(constat.idConstat)"> Delete</button>
+              <button class="btn btn-primary" style="margin-right: 15px;" (click)="Update(constat.idConstat)"> Update</button>
+            </div>
+
+        </div>
+
+
+        
+        
+
+    </div>
+
+    
+
+    
+</div>

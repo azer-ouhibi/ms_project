@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Reclamation } from 'src/Models/reclamation';
+import { Reclamation } from 'src/Models/Reclamation';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,7 @@ export class ReclamationService {
   
   
   deleteReclamation(id:any){
-    console.log(id);
+  
     return this.http.delete(this.baseurl+"Reclamation/"+id);
   
   }

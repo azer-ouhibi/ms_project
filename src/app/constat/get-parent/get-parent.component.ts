@@ -4,15 +4,15 @@ import { Constat } from 'src/Models/Constat';
 import { ConstatService } from '../constat.service';
 
 @Component({
-  selector: 'app-show',
-  templateUrl: './show.component.html',
-  styleUrls: ['./show.component.css']
+  selector: 'app-get-parent',
+  templateUrl: './get-parent.component.html',
+  styleUrls: ['./get-parent.component.css']
 })
-export class ShowComponent implements OnInit {
+export class GetParentComponent implements OnInit {
 
   constructor(private service:ConstatService,private router:Router) { }
-  ListConstat !: Constat[];
 
+  ListConstat !: Constat[];
  
  
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class ShowComponent implements OnInit {
   {
     this.service.fetchConstats().subscribe(
       (t)=>{
-
+        
         this.ListConstat=t;
       },
       (error)=>{
@@ -31,14 +31,10 @@ export class ShowComponent implements OnInit {
     );
   }
 
-  Delete(id:number)
-  {
-    this.service.deleteConstat(id).subscribe(()=>{},(error)=>{console.log(error)});
+
+  executes(i:any){
+    this.service.deleteConstat(i.id).subscribe(()=>{},(error)=>{console.log(error)});
     this.GetAllConstat();
-  }
-  Update(id:number)
-  {
-    this.router.navigate(['/constat/ConstatHome/update/',id])
   }
 
 }
