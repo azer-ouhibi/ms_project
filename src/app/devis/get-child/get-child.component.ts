@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { Devis } from 'src/Models/Devis';
+import { DevisService } from '../devis.service';
+import { GetParentComponent } from '../get-parent/get-parent.component';
 
 @Component({
   selector: 'app-get-child',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetChildComponent implements OnInit {
 
-  constructor() { }
+  @Input() devis!:Devis;
+  @Input() photoURL:any;
+
+  @Output() notif= new EventEmitter<any>();
+  
+  @ViewChild(GetParentComponent) c!:GetChildComponent;
+  
+    constructor(private service:DevisService,private router:Router) { }
+  
+    
 
   ngOnInit(): void {
   }
+  Delete()
+  {
+    this.notif.emit(this.devis);
 
+  }
+  UpdateUser(id:number)
+  {
+    this.router.navigate(['devis/DevisHome/update',id])
+  }
 }

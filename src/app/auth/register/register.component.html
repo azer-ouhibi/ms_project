@@ -1,0 +1,50 @@
+<div class="formcontainer">
+    <div class="formbody">
+        <form style="width:100%;" [formGroup]="myForm">
+            <div class="header">Register</div>
+            <div>
+                <input type="text" formControlName="email" matInput placeholder="Email" id="email">
+                <span *ngIf="isValid('email')">Entered email is invalid</span>
+            </div>
+     
+            <div>
+                <input type="text" formControlName="firstName" matInput placeholder="firstName" id="fname">
+                <span *ngIf="isValid('firstName')">firstName is required</span>
+            </div>
+
+            <div>
+                <input type="text" formControlName="lastName" matInput placeholder="lastName" id="lname">
+                <span *ngIf="isValid('lastName')">lastName is required</span>
+            </div>
+            <div>
+                <input type="date" formControlName="dateOfBirth" matInput placeholder="dateOfBirth" id="dbirth">
+                <span *ngIf="isValid('dateOfBirth')">lastName is required</span>
+            </div>
+            <div>
+                <input type="password" formControlName="password" matInput placeholder="Password" id="pass">
+                <span *ngIf="isValid('password')">Password is a mandatory field</span>
+            </div>
+            <div>
+                <input type="password" formControlName="cnfpass" matInput placeholder="Re-enter Password" id="cnfpass">
+                <span *ngIf="isValid('cnfpass')">Password and confirm password should match</span>
+            </div>
+            <div>
+                <input type="password" formControlName="tel" matInput placeholder="phone number" id="tel">
+                <span *ngIf="isValid('tel')">Phone number required</span>
+            </div>
+            <div style="margin-top:20px;">
+                <button class="form-btn" (click)="register()">Register</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <button class="form-btn-hollow" (click)="movetologin()">Login</button>
+            </div>
+
+
+            <div style="text-align: center;">
+                {{successMessage}}
+            </div>
+        </form>
+    </div>
+
+
+</div>

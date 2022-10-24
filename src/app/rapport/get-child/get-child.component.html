@@ -1,1 +1,16 @@
-<p>get-child works!</p>
+<div class="card film-item" [routerLink]="'/rapport/RapportHome/detail/'+rapport.id">
+    <img [src]="photoURL" class="w-100" alt="">
+    <div class="film-title">
+
+        <p style="text-align: center;">
+
+            <strong>idRapport :</strong> {{rapport.id}}<br>
+                <strong> dateCreation :</strong> {{rapport.dateCreation}}<br>
+                    <strong> numm Dossier :</strong> {{rapport.num_dossier}} <br>
+                        <strong>description :</strong> {{rapport.description}}<br>
+                          
+        </p>
+
+    </div>
+
+</div>

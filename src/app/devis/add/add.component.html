@@ -1,1 +1,31 @@
-<p>add works!</p>
+
+<form [formGroup]="DevisForm"(ngSubmit)="SaveDevis(DevisForm.value)" >
+    <div class="mb-3">
+     
+      <label for="" class="form-label">numero_devis</label>
+      <input formControlName="numero_devis" type="number" class="form-control" id="numero_devis">
+      
+      <label for="" class="form-label">montant</label>
+      <input formControlName="montant" type="number" class="form-control" id="montant">
+      
+      <label for="" class="aform-label">tauxDegat</label>
+      <input formControlName="tauxDegat" type="number" class="form-control" id="tauxDegat">
+      
+      <label for="" class="form-label">total</label>
+      <input formControlName="total" type="number" class="form-control" id="total">
+      
+
+      <label for="" class="form-label">tauxtax</label>
+      <input formControlName="tauxtax" type="number" class="form-control" id="tauxtax">
+      
+
+<!--       
+      <label for="" class="form-label">dateFacture</label>
+      <input formControlName="dateFacture" type="date" class="form-control" id="dateFacture"> -->
+     
+
+
+     </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

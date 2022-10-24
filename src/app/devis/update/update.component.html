@@ -1,1 +1,63 @@
-<p>update works!</p>
+<div class="container mt-5">
+    <div class="row" *ngIf="isLoading == true">
+        <div class="col-12 text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            <p>chargement...</p>
+        </div>
+    </div>
+    
+
+    <div class="row" *ngIf="isLoading == false" id="contentToConvert">
+       
+        <div class="col-md-4  ">
+           
+             <img src="https://reassurez-moi.fr/guide/wp-content/uploads/2018/12/constat-amiable.jpg" class="w-100" alt="">
+             <div class="row">
+            </div>
+
+            </div>
+        <div class="col-md-8  ">
+          <h1>Devis numero :{{devis.id} </h1>
+          <form #modelF="ngForm">
+            <label>Id Devis </label>
+            <input type="number" class="form-control" name="id" [(ngModel)]="devis.id" #id="ngModel" disabled>
+            
+            <label>numero devis</label>
+            <input type="text" class="form-control" [(ngModel)]="devis.numero_devis" #numero_devis="ngModel" name="numero_devis"  >
+            <label>montant</label>
+            <input type="text" class="form-control" [(ngModel)]="devis.montant" #montant="ngModel" name="montant"  >
+            
+            <label>total</label>
+            <input type="text" class="form-control" name="total" [(ngModel)]="devis.total" #total="ngModel">
+            
+            <label>Taux Dégats</label>
+            <input type="text" class="form-control" name="tauxDegat" [(ngModel)]="devis.tauxDegat" #tauxDegat="ngModel">
+            
+            <label>taux tax</label>
+            <input type="date" class="form-control" name="tauxtax" [(ngModel)]="devis.tauxtax" #tauxtax="ngModel" value="devis.tauxtax">
+            
+            
+        
+             <br>
+             <div class="row">
+                <input type="submit" class="btn btn-primary" value="Update" (click)="UpdateDevis(modelF.value)"> 
+
+             </div>
+        </form>
+        
+        
+            
+        </div>
+
+
+        
+        
+
+    </div>
+
+    
+
+    
+</div>

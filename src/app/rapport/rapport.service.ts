@@ -14,33 +14,33 @@ export class RapportService {
 
   constructor(private http:HttpClient,private router:Router) 
   { }
-  baseurl=environment.url;
+  baseurl=environment.urlfadi;
   
   fetchRapports():Observable<Rapport[]>
   {
-    return this.http.get<Rapport[]>(this.baseurl+"Rapport");
+    return this.http.get<Rapport[]>(this.baseurl);
   }
   fetchRapportById(id:any):Observable<Rapport>
   {
-    return this.http.get<Rapport>(this.baseurl+"Rapport/"+id);
+    return this.http.get<Rapport>(this.baseurl+"/"+id);
   }
   
   addRapport(data:Rapport)
   {
-    return this.http.post(this.baseurl+"Rapport",data);
+    return this.http.post(this.baseurl,data);
   }
   
   
   deleteRapport(id:any){
   
-    return this.http.delete(this.baseurl+"Rapport/"+id);
+    return this.http.delete(this.baseurl+"/"+id);
   
   }
-  UpdatRapport(data:Rapport):Observable<Rapport>
-  {
-    return this.http.put<Rapport>(this.baseurl+"Rapport/"+data.id,data);
+  // UpdatRapport(data:Rapport):Observable<Rapport>
+  // {
+  //   return this.http.put<Rapport>(this.baseurl+"Rapport/"+data.id,data);
   
-  }
+  // }
   
    
    

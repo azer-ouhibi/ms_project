@@ -1,1 +1,20 @@
-<p>get-child works!</p>
+<div class="card film-item" [routerLink]="'/devis/DevisHome/detail/'+devis.id">
+    <img [src]="photoURL" class="w-100" alt="">
+    <div class="film-title">
+
+        <p style="text-align: center;">
+
+            <strong>idDevis :</strong> {{devis.id}}<br>
+                <strong> numero_devis :</strong> {{devis.tauxDegat}}<br>
+                    <strong> montant :</strong> {{devis.montant}} <br>
+                        <strong>total :</strong> {{devis.total}}<br>
+                        <strong> tauxDegat :</strong> {{devis.tauxDegat}} <br>
+                            <strong>tauxtax :</strong> {{devis.tauxtax }}<br>
+                              
+        </p>
+
+    </div>
+
+</div>
+
+

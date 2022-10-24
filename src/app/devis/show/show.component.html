@@ -1,1 +1,32 @@
-<p>show works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id_devis</th>
+        <th scope="col">numero_devis</th>
+        <th scope="col">tauxDegat</th>
+        <th scope="col">montant</th>
+        <th scope="col">total</th>
+        <th scope="col">tauxtax </th>
+        <th scope="col"> - </th>
+        <th scope="col"> - </th>
+
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let li of ListDevis let i=index;">
+        <th scope="row">{{li.id}}</th>
+        <td >{{li.numero_devis}}</td>
+        <td>{{li.tauxDegat }}</td>
+        <td>{{li.montant  }}</td>
+        <td>{{li.total }}</td>
+        <td>{{li.tauxtax}}</td>
+        <td>  <button class="btn btn-primary" (click)="Delete(li.id)"> Delete</button></td>
+        <td>  <button class="btn btn-primary" (click)="Update(li.id)"> Update</button></td>
+        <!-- Ou bien 
+       <td>  <button class="btn btn-primary"[routerLink]="'/Invoice/InvoiceHome/update/'+li.idFacture"> Update</button></td>
+       
+      -->
+      </tr>
+    </tbody>
+  </table>

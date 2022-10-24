@@ -9,6 +9,7 @@ import { UpdateComponent } from './update/update.component';
 import { GetChildComponent } from './get-child/get-child.component';
 import { GetParentComponent } from './get-parent/get-parent.component';
 import { GetDetailsComponent } from './get-details/get-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,8 @@ import { GetDetailsComponent } from './get-details/get-details.component';
     GetDetailsComponent
   ],
   imports: [
+    ReactiveFormsModule,FormsModule,
+
     CommonModule,
     RapportRoutingModule
   ]

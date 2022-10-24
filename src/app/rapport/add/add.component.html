@@ -1,1 +1,26 @@
-<p>add works!</p>
+
+<form [formGroup]="RapportForm"(ngSubmit)="SaveRapport(RapportForm.value)" >
+    <div class="mb-3">
+     
+      <label for="" class="form-label">dateCreation</label>
+      <input formControlName="dateCreation" type="date" class="form-control" id="dateCreation">
+      
+      <label for="" class="form-label">num_dossier</label>
+      <input formControlName="num_dossier" type="text" class="form-control" id="num_dossier">
+      
+      <label for="" class="form-label">description</label>
+      <input formControlName="description" type="text" class="form-control" id="description">
+      
+      
+      
+
+<!--       
+      <label for="" class="form-label">dateFacture</label>
+      <input formControlName="dateFacture" type="date" class="form-control" id="dateFacture"> -->
+     
+
+
+     </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

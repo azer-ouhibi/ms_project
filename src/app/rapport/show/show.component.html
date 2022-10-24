@@ -1,1 +1,31 @@
-<p>show works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">idConstat</th>
+      <th scope="col">dateCreation</th>
+      <th scope="col">num_dossier</th>
+      <th scope="col">description</th>
+    
+      <th scope="col"> - </th>
+      <th scope="col"> - </th>
+
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let li of ListRapport let i=index;">
+      <th scope="row">{{li.id}}</th>
+      <td >{{li.dateCreation}}</td>
+      <td>{{li.num_dossier }}</td>
+      <td>{{li.description  }}</td>
+      
+
+      <td>  <button class="btn btn-primary" (click)="Delete(li.id)"> Delete</button></td>
+      <td>  <button class="btn btn-primary" (click)="Update(li.id)"> Update</button></td>
+      <!-- Ou bien 
+     <td>  <button class="btn btn-primary"[routerLink]="'/Invoice/InvoiceHome/update/'+li.idFacture"> Update</button></td>
+     
+    -->
+    </tr>
+  </tbody>
+</table>

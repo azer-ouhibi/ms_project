@@ -5,8 +5,9 @@
 export const environment = {
 
   production: false,
-  url:"http://localhost:8089/SpringMVC/"
- 
+  url:"http://localhost:8089/SpringMVC/",
+  urlfadi:"http://localhost:8082/api/Rapport"
+
 
 };
 
